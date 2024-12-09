@@ -19,9 +19,7 @@ jobs:
         uses: aarcangeli/load-dotenv@v1
         with:
           path: ./src/env
-          with:
-            filenames: |
-              .env.dev
+          filenames: .env.${{ inputs.environment }}
 
       - name: Google Auth
         id: auth
