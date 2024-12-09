@@ -15,12 +15,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Load .env file
-        uses: aarcangeli/load-dotenv@v1
-        with:
-          path: ./src/env
-          filenames: .env.${{ inputs.environment }}
-          quiet: true
+      - id: dotenv
+        uses: ./.github/actions/dotenv-action
 
       - name: Google Auth
         id: auth
