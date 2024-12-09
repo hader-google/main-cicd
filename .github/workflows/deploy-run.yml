@@ -20,6 +20,7 @@ jobs:
         with:
           path: ./src/env
           filenames: .env.${{ inputs.environment }}
+          quiet: true
 
       - name: Google Auth
         id: auth
