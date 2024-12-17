@@ -53,4 +53,5 @@ jobs:
           service: ${{ env.SERVICE_NAME }}
           region: ${{ env.REGION }}
           image: ${{ env.REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.ARTIFACT_REPO }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
-          flags: '--port=8081 --service-account=${{ env.CLOUD_RUN_SA }}'
+          flags: '--port=8081 --service-account=${{ env.CLOUD_RUN_SA }} --set-secrets SECRET_VALUE=my_secret_value:latest'
+  
